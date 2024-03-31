@@ -1,7 +1,8 @@
-from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 from selenium.webdriver.common.by import By
+from selenium import webdriver
+
 
 keyword = input("Enter a city's name: ")
 
@@ -32,17 +33,17 @@ def timesofindia():
             text = i.text
             list =text.split(':')
             if(len(list)>=2):
-                print(list[1])
-                lst.append(list[1])
+                for stipped_lst in list:
+                    if(len(stipped_lst[0])>stipped_lst(lst[1])):
+                        lst.append(stipped_lst[0])
+                    else:
+                        lst.append(stipped_lst[1])
             else:
-                 print(list[0])
                  lst.append(list[0])
-        return lst     
+            
+        return lst, keyword     
     except Exception as e:
         print(f"Error: {e}")
 
 def bbcnews():
     pass
-
-# timesofindia()  it is called by twitter.py
-# bbcnews()
