@@ -21,11 +21,11 @@ def timesofindia():
         input_field = driver.find_element(By.XPATH,inputbar)
         input_field.send_keys(keyword)
         input_field.send_keys(Keys.RETURN)
-        time.sleep(10)
+        time.sleep(15)
         searchlatest = driver.find_element(By.XPATH,latestbutton)
         searchlatest.click()
         print("Clicked")
-        time.sleep(2)
+        time.sleep(5)
         titles = driver.find_elements(By.XPATH,titleofnews)
         lst = []
         for i in titles[:5]:
