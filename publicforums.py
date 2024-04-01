@@ -51,7 +51,7 @@ def scrape_twitter():
         username = data["username"]
         password = data["password"]
 
-    username_input = WebDriverWait(driver, 30).until(
+    username_input = WebDriverWait(driver, 40).until(
         EC.presence_of_element_located((By.XPATH,usernamexpath))
     )
     username_input.send_keys(username)

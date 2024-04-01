@@ -30,17 +30,23 @@ def timesofindia():
         titles = driver.find_elements(By.XPATH,titleofnews)
         lst = []
         for i in titles[:5]:
+
             text = i.text
+            print(text)
             list =text.split(':')
-            if(len(list)>=2):
-                for stipped_lst in list:
-                    if(len(stipped_lst[0])>stipped_lst(lst[1])):
-                        lst.append(stipped_lst[0])
-                    else:
-                        lst.append(stipped_lst[1])
+            print(list)
+            if len(list) > 1:
+                if len(list[0]) >= len(list[1]):
+                    lst.append(list[0])
+                else:
+                    lst.append(list[1])
             else:
-                 lst.append(list[0])
-            
+                lst.append(list[0])
+           
+        print(lst)
+        if(len(lst)<1):
+            print(f"No news today about {keyword}!!") 
+            timesofindia() 
         return lst, keyword     
     except Exception as e:
         print(f"Error: {e}")
