@@ -93,6 +93,8 @@ def plot_sentiment_bar(data):
 async def main():
 
     # st.title("Dashboard")
+    news_sources = st.sidebar.selectbox("Select News Source", ["News Portal", "Social Media", "Google Trends"])
+
     user_input = st.sidebar.text_input("Enter City's Name:")
     button_clicked = st.sidebar.button("Search")
     if button_clicked:
